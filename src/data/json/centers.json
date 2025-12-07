@@ -1,0 +1,142 @@
+[
+  {
+    "id": "c1",
+    "name": "Centro de Biología Molecular",
+    "description": "Centro especializado en investigación genética y biología molecular aplicada a la medicina.",
+    "logo": "microscope",
+    "history": "Fundado en 1985, el Centro de Biología Molecular ha sido pionero en investigaciones sobre terapias génicas en América Latina. Desde sus inicios, ha colaborado con instituciones internacionales de prestigio y ha formado a más de 200 investigadores.",
+    "mission": "Nuestra misión es desarrollar investigación de excelencia en biología molecular, contribuyendo al avance científico y a la formación de nuevos investigadores comprometidos con el desarrollo sostenible y la salud pública.",
+    "usefulInfo": "Horario de atención: Lunes a Viernes, 8:00 - 17:00. Visitas programadas previa coordinación. Disponibilidad de equipamiento de alta tecnología para colaboraciones externas.",
+    "contact": {
+      "phone": "+56 2 2978 4500",
+      "email": "biologia.molecular@universidad.edu",
+      "address": "Av. Libertador Bernardo O'Higgins 1234, Santiago"
+    },
+    "popularity": 95,
+    "publications": [
+      {
+        "title": "Edición génica CRISPR en enfermedades hereditarias: perspectivas latinoamericanas",
+        "authors": "García, M., Rodríguez, L., Silva, P.",
+        "year": 2023,
+        "journal": "Nature Genetics"
+      },
+      {
+        "title": "Expresión génica en células madre: nuevos biomarcadores",
+        "authors": "Fernández, A., Castro, J.",
+        "year": 2022,
+        "journal": "Cell Biology International"
+      },
+      {
+        "title": "Terapias moleculares para enfermedades neurodegenerativas",
+        "authors": "Morales, R., López, C., Vega, T.",
+        "year": 2023,
+        "journal": "Journal of Molecular Medicine"
+      }
+    ]
+  },
+  {
+    "id": "c2",
+    "name": "Centro de Estudios Climáticos y Resiliencia",
+    "description": "Investigación interdisciplinaria sobre cambio climático y adaptación de ecosistemas.",
+    "logo": "cloud-sun",
+    "history": "Establecido en 2010 en respuesta a la creciente necesidad de comprender los efectos del cambio climático en la región. Ha liderado proyectos de alcance nacional e internacional, convirtiéndose en referente para políticas públicas ambientales.",
+    "mission": "Generar conocimiento científico de alto impacto sobre el cambio climático, sus efectos en los ecosistemas locales y las estrategias de adaptación necesarias para construir comunidades resilientes.",
+    "usefulInfo": "Cuenta con estaciones de monitoreo en 15 ubicaciones geográficas. Ofrece programas de capacitación para profesionales y comunidades. Base de datos climatológicos disponible para investigadores.",
+    "contact": {
+      "phone": "+56 2 2978 4600",
+      "email": "clima.resiliencia@universidad.edu",
+      "address": "Av. Vicuña Mackenna 4860, Santiago"
+    },
+    "popularity": 88,
+    "publications": [
+      {
+        "title": "Impacto del cambio climático en glaciares andinos: proyecciones 2050",
+        "authors": "Sánchez, E., Torres, M., Gutiérrez, D.",
+        "year": 2023,
+        "journal": "Climate Dynamics"
+      },
+      {
+        "title": "Resiliencia urbana frente a eventos climáticos extremos",
+        "authors": "Muñoz, P., Ramírez, V.",
+        "year": 2022,
+        "journal": "Urban Climate"
+      },
+      {
+        "title": "Modelos predictivos de sequía en zonas semiáridas",
+        "authors": "Contreras, L., Ávila, S., Rojas, F.",
+        "year": 2023,
+        "journal": "Journal of Hydrology"
+      }
+    ]
+  },
+  {
+    "id": "c3",
+    "name": "Centro de Inteligencia Artificial y Robótica",
+    "description": "Desarrollo de sistemas inteligentes y automatización avanzada para la industria 4.0.",
+    "logo": "cpu",
+    "history": "Inaugurado en 2015, nació de la convergencia entre las facultades de Ingeniería e Informática. Ha desarrollado soluciones tecnológicas implementadas en sectores productivos clave como minería, agricultura de precisión y salud digital.",
+    "mission": "Investigar, desarrollar e implementar soluciones basadas en inteligencia artificial y robótica que aporten a la transformación digital del país, formando profesionales de excelencia y generando conocimiento de frontera.",
+    "usefulInfo": "Laboratorios equipados con sistemas de visión computacional, brazos robóticos colaborativos y clusters de computación de alto rendimiento. Programas de vinculación con la industria.",
+    "contact": {
+      "phone": "+56 2 2978 4700",
+      "email": "ia.robotica@universidad.edu",
+      "address": "Av. República 779, Santiago"
+    },
+    "popularity": 92,
+    "publications": [
+      {
+        "title": "Deep learning para diagnóstico médico asistido por imágenes",
+        "authors": "Campos, R., Núñez, K., Parra, H.",
+        "year": 2023,
+        "journal": "IEEE Transactions on Medical Imaging"
+      },
+      {
+        "title": "Robótica colaborativa en minería subterránea",
+        "authors": "Valdés, J., Ortiz, M.",
+        "year": 2022,
+        "journal": "Robotics and Autonomous Systems"
+      },
+      {
+        "title": "Procesamiento de lenguaje natural para idiomas originarios",
+        "authors": "Herrera, A., Silva, N., Bravo, C.",
+        "year": 2023,
+        "journal": "Computational Linguistics"
+      }
+    ]
+  },
+  {
+    "id": "c4",
+    "name": "Centro de Neurociencia Cognitiva",
+    "description": "Estudio de procesos cognitivos, aprendizaje y funcionamiento cerebral.",
+    "logo": "brain",
+    "history": "Fundado en 2005, el Centro de Neurociencia Cognitiva ha consolidado una línea de investigación en los mecanismos neurales del aprendizaje y la memoria. Sus estudios han contribuido significativamente a entender trastornos del neurodesarrollo.",
+    "mission": "Avanzar en la comprensión de los procesos cognitivos humanos mediante investigación científica rigurosa, promoviendo aplicaciones en educación, salud mental y diseño de tecnologías cognitivas.",
+    "usefulInfo": "Equipamiento: EEG de 64 canales, eye-tracking, resonancia magnética funcional (colaboración externa). Participa en estudios clínicos. Abierto a colaboraciones interdisciplinarias.",
+    "contact": {
+      "phone": "+56 2 2978 4800",
+      "email": "neurociencia@universidad.edu",
+      "address": "Av. Presidente Errázuriz 3485, Santiago"
+    },
+    "popularity": 85,
+    "publications": [
+      {
+        "title": "Plasticidad neuronal en aprendizaje de segunda lengua en adultos",
+        "authors": "Ibáñez, S., Mendoza, F., Reyes, L.",
+        "year": 2023,
+        "journal": "NeuroImage"
+      },
+      {
+        "title": "Correlatos neuronales de la creatividad musical",
+        "authors": "Bustamante, G., Cáceres, P.",
+        "year": 2022,
+        "journal": "Brain and Cognition"
+      },
+      {
+        "title": "Déficits atencionales en trastornos del espectro autista",
+        "authors": "Martínez, V., Fuentes, R., Salazar, T.",
+        "year": 2023,
+        "journal": "Journal of Autism and Developmental Disorders"
+      }
+    ]
+  }
+]

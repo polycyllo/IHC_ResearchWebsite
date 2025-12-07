@@ -19,15 +19,20 @@ function App() {
     setCurrentView(view);
     if (item) {
       setSelectedItem(item);
-      setBreadcrumbs(['Inicio', 'Investigación', item.name]);
+      const isCenter = researchCenters.some(c => c.id === item.id);
+      if (isCenter) {
+        setBreadcrumbs(['Inicio', 'Centros de Investigación', item.name]);
+      } else {
+        setBreadcrumbs(['Inicio', 'Laboratorios', item.name]);
+      }
     } else {
       setSelectedItem(null);
       if (view === 'centers') {
-        setBreadcrumbs(['Inicio', 'Investigación', 'Centros de Investigación']);
+        setBreadcrumbs(['Inicio', 'Centros de Investigación']);
       } else if (view === 'labs') {
-        setBreadcrumbs(['Inicio', 'Investigación', 'Laboratorios']);
+        setBreadcrumbs(['Inicio', 'Laboratorios']);
       } else if (view === 'research') {
-        setBreadcrumbs(['Inicio', 'Investigación', 'Investigaciones Realizadas']);
+        setBreadcrumbs(['Inicio', 'Investigaciones Realizadas']);
       } else {
         setBreadcrumbs(['Inicio']);
       }

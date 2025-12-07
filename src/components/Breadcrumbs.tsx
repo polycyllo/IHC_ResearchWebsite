@@ -6,6 +6,14 @@ interface BreadcrumbsProps {
 }
 
 function Breadcrumbs({ items, onNavigate }: BreadcrumbsProps) {
+  const getViewForBreadcrumb = (item: string): 'home' | 'centers' | 'labs' | 'research' => {
+    if (item === 'Inicio') return 'home';
+    if (item === 'Centros de Investigación') return 'centers';
+    if (item === 'Laboratorios') return 'labs';
+    if (item === 'Investigaciones Realizadas') return 'research';
+    return 'home';
+  };
+
   return (
     <nav className="flex items-center space-x-2 text-sm">
       {items.map((item, index) => (
@@ -16,9 +24,10 @@ function Breadcrumbs({ items, onNavigate }: BreadcrumbsProps) {
           ) : (
             <button
               onClick={() => {
-                if (index === 0) onNavigate('home');
+                const view = getViewForBreadcrumb(item);
+                onNavigate(view);
               }}
-              className="text-gray-600 hover:text-gray-900 transition-colors"
+              className="text-blue-600 hover:text-blue-700 transition-colors"
             >
               {item}
             </button>

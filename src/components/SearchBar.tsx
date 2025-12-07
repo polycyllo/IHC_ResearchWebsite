@@ -1,6 +1,5 @@
 import { useState, useEffect, useRef } from 'react';
 import { Search, Clock, Building2, FlaskConical, FileText, ArrowRight } from 'lucide-react';
-import { supabase } from '../services/supabase';
 import { researchCenters, laboratories } from '../data/mockData';
 
 interface SearchBarProps {
@@ -37,36 +36,28 @@ function SearchBar({ onSearch }: SearchBarProps) {
     return () => document.removeEventListener('mousedown', handleClickOutside);
   }, []);
 
-  const loadSearchHistory = async () => {
+  const loadSearchHistory = () => {
     try {
-      const { data, error } = await supabase
-        .from('search_history')
-        .select('query')
-        .order('created_at', { ascending: false })
-        .limit(5);
-
-      if (error) throw error;
-
-      const uniqueQueries = [...new Set(data?.map(item => item.query) || [])].slice(0, 5);
-      setSearchHistory(uniqueQueries);
+      const stored = localStorage.getItem('searchHistory');
+      const history = stored ? JSON.parse(stored) : [];
+      setSearchHistory(history.slice(0, 5));
     } catch (error) {
       console.error('Error loading search history:', error);
     }
   };
 
-  const saveSearch = async (searchQuery: string) => {
+  const saveSearch = (searchQuery: string) => {
     if (!searchQuery.trim()) return;
 
     try {
-      await supabase
-        .from('search_history')
-        .insert([{
-          query: searchQuery,
-          type: 'general',
-          result_count: 0
-        }]);
+      const stored = localStorage.getItem('searchHistory');
+      const history = stored ? JSON.parse(stored) : [];
 
-      await loadSearchHistory();
+      const filteredHistory = history.filter((item: string) => item !== searchQuery);
+      const updatedHistory = [searchQuery, ...filteredHistory].slice(0, 10);
+
+      localStorage.setItem('searchHistory', JSON.stringify(updatedHistory));
+      loadSearchHistory();
     } catch (error) {
       console.error('Error saving search:', error);
     }
