@@ -60,7 +60,7 @@ function ResearchDetailView({ publication }: ResearchDetailViewProps) {
               className="inline-flex items-center gap-2 rounded-lg bg-primary-blue px-5 py-2.5 text-sm font-medium text-white transition-colors hover:bg-blue-500"
             >
               <Download className="h-4 w-4" />
-              Descargar publicación
+              Ver publicación
             </button>
           </div>
         </div>

@@ -8,7 +8,7 @@ interface ResearchViewProps {
   onViewPublication: (publication: ResearchPublicationDetail) => void;
 }
 
-const PAGE_SIZE = 15;
+const PAGE_SIZE = 12;
 
 function ResearchView({ centers, labs, onViewPublication }: ResearchViewProps) {
   const publications = useMemo<ResearchPublicationDetail[]>(
