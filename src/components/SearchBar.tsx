@@ -45,6 +45,34 @@ function SearchBar({ onSearch }: SearchBarProps) {
     []
   );
 
+  const resolveSearchResult = (searchQuery: string): SearchResultItem | undefined => {
+    const normalizedQuery = searchQuery.trim().toLowerCase();
+    if (!normalizedQuery) {
+      return undefined;
+    }
+
+    const centerMatch = researchCenters.find(center => center.name.toLowerCase() === normalizedQuery);
+    if (centerMatch) {
+      return { id: centerMatch.id, type: 'centro' };
+    }
+
+    const labMatch = laboratories.find(lab => lab.name.toLowerCase() === normalizedQuery);
+    if (labMatch) {
+      return { id: labMatch.id, type: 'laboratorio' };
+    }
+
+    const publicationMatch = publications.find(publication => publication.title.toLowerCase() === normalizedQuery);
+    if (publicationMatch) {
+      return {
+        id: `publication-${publicationMatch.sourceId}-${publicationMatch.title}`,
+        type: 'investigacion',
+        publication: publicationMatch
+      };
+    }
+
+    return undefined;
+  };
+
   useEffect(() => {
     loadSearchHistory();
   }, []);
@@ -161,13 +189,21 @@ function SearchBar({ onSearch }: SearchBarProps) {
 
     if (suggestion.type === 'centro') {
       onSearch(suggestion.title, { id: suggestion.id, type: 'centro' });
-    } else if (suggestion.type === 'laboratorio') {
-      onSearch(suggestion.title, { id: suggestion.id, type: 'laboratorio' });
-    } else if (suggestion.type === 'investigacion' && suggestion.payload) {
-      onSearch(suggestion.title, { id: suggestion.id, type: 'investigacion', publication: suggestion.payload });
-    } else {
-      onSearch(suggestion.title);
+      return;
     }
+
+    if (suggestion.type === 'laboratorio') {
+      onSearch(suggestion.title, { id: suggestion.id, type: 'laboratorio' });
+      return;
+    }
+
+    if (suggestion.type === 'investigacion' && suggestion.payload) {
+      onSearch(suggestion.title, { id: suggestion.id, type: 'investigacion', publication: suggestion.payload });
+      return;
+    }
+
+    const resolvedResult = resolveSearchResult(suggestion.title);
+    onSearch(suggestion.title, resolvedResult);
   };
 
   const handleSubmit = (e: React.FormEvent) => {
@@ -175,24 +211,8 @@ function SearchBar({ onSearch }: SearchBarProps) {
     if (query.trim()) {
       saveSearch(query);
 
-      const queryLower = query.toLowerCase();
-      const matchingCenter = researchCenters.find(c => c.name.toLowerCase() === queryLower);
-      const matchingLab = laboratories.find(l => l.name.toLowerCase() === queryLower);
-      const matchingPublication = publications.find(p => p.title.toLowerCase() === queryLower);
-
-      if (matchingCenter) {
-        onSearch(query, { id: matchingCenter.id, type: 'centro' });
-      } else if (matchingLab) {
-        onSearch(query, { id: matchingLab.id, type: 'laboratorio' });
-      } else if (matchingPublication) {
-        onSearch(query, {
-          id: `publication-${matchingPublication.sourceId}-${matchingPublication.title}`,
-          type: 'investigacion',
-          publication: matchingPublication
-        });
-      } else {
-        onSearch(query);
-      }
+      const result = resolveSearchResult(query);
+      onSearch(query, result);
 
       setShowSuggestions(false);
     }
