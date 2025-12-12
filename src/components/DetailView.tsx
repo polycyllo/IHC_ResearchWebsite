@@ -2,7 +2,7 @@ import { useState } from 'react';
 import { Mail, Phone, MapPin, FileText } from 'lucide-react';
 import * as Icons from 'lucide-react';
 import type { Center, Lab } from '../types';
-
+//
 interface DetailViewProps {
   item: Center | Lab;
 }
